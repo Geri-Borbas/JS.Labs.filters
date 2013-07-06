@@ -9,19 +9,16 @@
  *
  */
 
-var EPPZRandomFilter = EPPZLayer.extend
+var EPPZOnePoleFilter = EPPZLayer.extend
 ({
     color: function()
     { return 'red'; },
 
     filter: function()
     {
-        this.samples.map(function(eachSample)
-        {
-            amount = 5;
-            eachSample.x = eachSample.x + Math.random() * amount;
-            eachSample.y = eachSample.y + Math.random() * amount;
-        });
+        var filter = 0.2;
+        this.filteredSample.x = this.sample.x * filter + this.previousSample.x * (1.0 - filter);
+        this.filteredSample.y = this.sample.y * filter + this.previousSample.y * (1.0 - filter);
     }
 
 });
