@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Labs-filters by eppz</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Labs-filters</h1>
+        <p>HTML5 &lt;cansvas&gt; draft for visualizing signal filtering methods.</p>
+
+        <p class="view"><a href="https://github.com/eppz/labs-filters">View the Project on GitHub <small>eppz/labs-filters</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/eppz/labs-filters/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/eppz/labs-filters/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/eppz/labs-filters">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a name="-labsfilters" class="anchor" href="#-labsfilters"><span class="octicon octicon-link"></span></a><img src="http://www.eppz.eu/beacons/eppz!.png" alt="eppz!tools"> labs!filters</h2>
+
+<p>HTML5  experiment to visualize signal filtering methods (one-pole filter, moving average).</p>
+
+<h4>
+<a name="more-objective-javascript" class="anchor" href="#more-objective-javascript"><span class="octicon octicon-link"></span></a>More objective JavaScript</h4>
+
+<p>As I come from Objective-C world, this draft is also outlines attempts to write JavaScript in an object-oriented MVC manner. Using a tiny little snippet <code>Class.js</code> it is relatively easy to define classes, put them in separate files, split up logic into model (<code>EPPZScene</code>), view (<code>EPPZLayer</code> and subclasses) and controller (<code>ViewController</code>) classes.</p>
+
+<p>Having this, I could split up implementations in an efficient way. <code>EPPZScene</code> maintains canvas layers, mouse events and animation, <code>EPPZLayer</code> holds common features of a generic canvas layer, windowing samples (yet mouse coordinates). Subclasses (<code>EPPZHistory</code>, <code>EPPZSamples</code>, etc.) implement only the concrete features specific for this draft namely the filtering methods, and some UI specific detail.</p>
+
+<p>I still have no separate interface files, private/protected properties, but this is still a good start.</p>
+
+<h4>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h4>
+
+<blockquote>
+<p>Licensed under the <a href="http://en.wikipedia.org/wiki/MIT_License">Open Source MIT license</a>.</p>
+</blockquote>
+
+<p><a href="http://githalytics.com/eppz/labs-filters"><img src="https://cruel-carlota.pagodabox.com/2873b2d81bd26e7c0d4ff1053f631cbb" alt="githalytics.com alpha" title="githalytics.com"></a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/eppz">eppz</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
