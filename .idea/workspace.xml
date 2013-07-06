@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="614c2bf3-3f41-489d-bf90-244128d996ba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/EPPZFilters.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/EPPZLayer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/EPPZMonitor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/ViewController.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/eppz!filters.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/eppz!scene.js" afterPath="$PROJECT_DIR$/js/EPPZScene.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/helpers.js" afterPath="$PROJECT_DIR$/js/helpers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles.css" afterPath="$PROJECT_DIR$/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Filtering.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,7 +12,7 @@
     <file path="/eppz!filters.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373020096625" ignored="false" />
     <file path="/ui.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373028339634" ignored="false" />
     <file path="/controller.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373074705877" ignored="false" />
-    <file path="/README.md" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373075855694" ignored="false" />
+    <file path="/README.md" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373076073184" ignored="false" />
     <file path="/Dummy.txt" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373070557331" ignored="false" />
     <file path="/index.html" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373075553710" ignored="false" />
     <file path="/helpers.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373073524106" ignored="false" />
@@ -62,7 +50,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="858" selection-end="858" vertical-scroll-proportion="0.12727273">
+            <state line="2" column="0" selection-start="167" selection-end="167" vertical-scroll-proportion="0.036363635">
               <folding />
             </state>
           </provider>
@@ -520,7 +508,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="858" selection-end="858" vertical-scroll-proportion="0.12727273">
+        <state line="2" column="0" selection-start="167" selection-end="167" vertical-scroll-proportion="0.036363635">
           <folding />
         </state>
       </provider>
