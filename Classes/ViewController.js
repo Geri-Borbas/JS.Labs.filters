@@ -25,7 +25,7 @@ var ViewController = Class.extend
         this.scene = new EPPZScene('scene', 100, 0); //Construct with (<div> id, sampleWindowSize, autoStopFrameLimit).
         this.scene.addCanvasLayerWithId('history', EPPZHistory);
         this.scene.addCanvasLayerWithId('samples', EPPZSamples);
-        this.scene.addCanvasLayerWithId('randomFilter', EPPZRandomFilter);
+        this.scene.addCanvasLayerWithId('onePoleFilter', EPPZOnePoleFilter);
         this.scene.addCanvasLayerWithId('movingAverage', EPPZMovingAverage);
     },
 

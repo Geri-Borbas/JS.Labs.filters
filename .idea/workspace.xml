@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="614c2bf3-3f41-489d-bf90-244128d996ba" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Classes/EPPZRandomFilter.js" afterPath="$PROJECT_DIR$/Classes/EPPZOnePoleFilter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes/EPPZLayer.js" afterPath="$PROJECT_DIR$/Classes/EPPZLayer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes/EPPZOnePoleFilter.js" afterPath="$PROJECT_DIR$/Classes/EPPZOnePoleFilter.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes/ViewController.js" afterPath="$PROJECT_DIR$/Classes/ViewController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Filtering.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -17,13 +15,13 @@
     <file path="/ui.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373028339634" ignored="false" />
     <file path="/controller.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373074705877" ignored="false" />
     <file path="/README.md" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373083292773" ignored="false" />
-    <file path="/Dummy.txt" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373070557331" ignored="false" />
-    <file path="/index.html" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373081910415" ignored="false" />
+    <file path="/Dummy.txt" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373086061028" ignored="false" />
+    <file path="/index.html" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373086120768" ignored="false" />
     <file path="/helpers.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373073524106" ignored="false" />
     <file path="/EPPZLayer.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373084865458" ignored="false" />
     <file path="/EPPZFilters.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373078405951" ignored="false" />
     <file path="/EPPZScene.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373082861956" ignored="false" />
-    <file path="/ViewController.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373083146377" ignored="false" />
+    <file path="/ViewController.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373086095894" ignored="false" />
     <file path="/EPPZMonitor.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373078746839" ignored="false" />
     <file path="/EPPZSamples.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373079323368" ignored="false" />
     <file path="/EPPZMovingAverage.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373080347759" ignored="false" />
@@ -75,15 +73,15 @@
         <option value="$PROJECT_DIR$/Classes/EPPZSamples.js" />
         <option value="$PROJECT_DIR$/Classes/EPPZMonitor.js" />
         <option value="$PROJECT_DIR$/Classes/EPPZMovingAverage.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/Classes/EPPZHistory.js" />
         <option value="$PROJECT_DIR$/Classes/EPPZScene.js" />
         <option value="$PROJECT_DIR$/styles.css" />
-        <option value="$PROJECT_DIR$/Classes/ViewController.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Classes/EPPZRandomFilter.js" />
         <option value="$PROJECT_DIR$/Classes/EPPZLayer.js" />
+        <option value="$PROJECT_DIR$/Classes/ViewController.js" />
         <option value="$PROJECT_DIR$/Classes/EPPZOnePoleFilter.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -178,8 +176,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="fileTemplates" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -243,10 +241,9 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14087301" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23250565" sideWeight="0.859127" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17494357" sideWeight="0.859127" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1772009" sideWeight="0.859127" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.188" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -255,6 +252,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14087301" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -371,9 +369,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Classes/eppz!kit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.5521472">
-          <folding />
-        </state>
+        <state line="62" column="0" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.5521472" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Classes/EPPZSamples.js">
@@ -388,22 +384,6 @@
     <entry file="file://$PROJECT_DIR$/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="17" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="27" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.11056511">
-          <folding>
-            <element signature="e#0#1108#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/ViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="59" selection-start="1559" selection-end="1559" vertical-scroll-proportion="0.2630303">
           <folding />
         </state>
       </provider>
@@ -424,16 +404,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/EPPZLayer.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1905" selection-end="1905" vertical-scroll-proportion="0.16363636">
-          <folding />
+        <state line="21" column="19" selection-start="1440" selection-end="1440" vertical-scroll-proportion="0.13075314">
+          <folding>
+            <element signature="e#0#1108#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Classes/EPPZOnePoleFilter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="54" selection-start="1369" selection-end="1369" vertical-scroll-proportion="0.21479714">
+        <state line="22" column="10" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.19897959">
           <folding>
             <element signature="e#0#1128#0" expanded="false" />
           </folding>
@@ -442,7 +424,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Classes/EPPZMovingAverage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="59" selection-start="1389" selection-end="1389" vertical-scroll-proportion="0.38181818">
+        <state line="22" column="42" selection-start="1438" selection-end="1438" vertical-scroll-proportion="0.34126163">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/EPPZLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="1953" selection-end="1953" vertical-scroll-proportion="0.15511893">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/ViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="74" selection-start="1824" selection-end="1824" vertical-scroll-proportion="0.31023785">
           <folding />
         </state>
       </provider>

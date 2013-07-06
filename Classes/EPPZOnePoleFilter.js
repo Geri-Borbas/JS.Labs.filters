@@ -16,9 +16,11 @@ var EPPZOnePoleFilter = EPPZLayer.extend
 
     filter: function()
     {
+        /*
         var filter = 0.2;
         this.filteredSample.x = this.sample.x * filter + this.previousSample.x * (1.0 - filter);
         this.filteredSample.y = this.sample.y * filter + this.previousSample.y * (1.0 - filter);
+        */
     }
 
 });
