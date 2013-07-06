@@ -2,6 +2,8 @@
 
 HTML5 <canvas> experiment to visualize signal filtering methods (one-pole filter, moving average).
 
+See a [Live Demo](http://eppz.github.io/labs-filters/versions/current/) on the GitHub Page.
+
 #### More objective JavaScript
 
 As I come from Objective-C world, this draft is also outlines attempts to write JavaScript in an object-oriented MVC manner. Using a tiny little snippet `Class.js` it is relatively easy to define classes, put them in separate files, split up logic into model (`EPPZScene`), view (`EPPZLayer` and subclasses) and controller (`ViewController`) classes.
