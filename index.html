@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Signal filtering</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+<!--Scene canvas-->
+<div id="scene">
+    <canvas id="signal" width="300" height="300"></canvas>
+    <canvas id="filters" width="300" height="300"></canvas>
+</div>
+
+<!--Import-->
+<script src="js/Class.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/eppz!scene.js"></script>
+<script src="js/eppz!filters.js"></script>
+<script src="js/controller.js"></script>
+
+<!--Instantiate scene-->
+<script language="javascript">
+
+	//Assemble scene.
+	var scene = new EPPZScene();
+    scene.autoSuspendFrameLimit = 300;
+	scene.addCanvasLayerWithId('signal', EPPZMonitor);
+	scene.addCanvasLayerWithId('filters', EPPZFilters);
+    scene.start();
+
+</script>
+
+<section>
+    <button title="start" onclick="scene.start();">►</button>
+    <button title="stop" onclick="scene.stop();">■</button>
+    <input id="fpsSlider" type="range" value="60"
+           onchange="Controller.fpsSliderValueChanged();"
+           onmouseup="Controller.fpsSliderReleased();">
+    <label id="fpsValueLabel"><strong>60</strong> fps</label>
+</section>
+
+</body>
+</html>
