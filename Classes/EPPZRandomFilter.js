@@ -9,48 +9,19 @@
  *
  */
 
-//EPPZMonitor (simply display input as it is).
-var ViewController = Class.extend
+var EPPZRandomFilter = EPPZLayer.extend
 ({
+    color: function()
+    { return 'red'; },
 
-    //Creation.
-    construct: function()
+    filter: function()
     {
-        //UI outlets.
-        this.slider = document.getElementById('fpsSlider');
-        this.label = document.getElementById('fpsValueLabel');
-
-        //Assemble scene.
-        this.scene = new EPPZScene();
-        this.scene.autoSuspendFrameLimit = 300;
-        this.scene.addCanvasLayerWithId('signal', EPPZMonitor);
-        this.scene.addCanvasLayerWithId('filters', EPPZFilters);
-    },
-
-    initWithFps: function(fps)
-    {
-        //Setup.
-        this.scene.fps = fps;
-        this.slider.value = fps;
-        this.label.innerHTML = '<strong>'+this.slider.value+'</strong> fps';
-
-        //Go.
-        this.scene.start();
-    },
-
-    //UI.
-    fpsSliderValueChanged: function()
-    {
-        this.label.innerHTML = '<strong>'+this.slider.value+'</strong> fps';
-    },
-
-    //UX.
-    fpsSliderReleased: function()
-    {
-        //Restart scene.
-        this.scene.stop();
-        this.scene.fps = this.slider.value;
-        this.scene.start();
+        this.samples.map(function(eachSample)
+        {
+            amount = 5;
+            eachSample.x = eachSample.x + Math.random() * amount;
+            eachSample.y = eachSample.y + Math.random() * amount;
+        });
     }
 
 });

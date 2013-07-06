@@ -11,15 +11,16 @@
 
 var EPPZScene = Class.extend
 ({
-    construct: function(autoStopFrameLimit)
+    construct: function(divId, sampleWindowSize, autoStopFrameLimit)
     {
-        log('EPPZScene construct');
-
         //<canvas> collection.
         this.layers = [];
 
+        //Characteristics.
+        this.sampleWindowSize = sampleWindowSize || 50;
+        this.autoSuspendFrameLimit = autoStopFrameLimit || 0;
+
         //Counter.
-        this.autoSuspendFrameLimit = autoStopFrameLimit;
         this.stopped = true;
         this.frame = 0;
 
@@ -31,24 +32,29 @@ var EPPZScene = Class.extend
         //Animation.
         this.timer = null;
         this.fps = 60; //Default.
+
+        //<div> reference.
+        this.div = document.getElementById(divId);
+        this.topLeft = new Point(this.div.offsetLeft, this.div.offsetTop);
+
+        log('EPPZScene created at '+this.topLeft.stringValue()+' running at '+this.fps+' fps.');
     },
 
     mouseMoved: function(event)
     {
-        this.mousePosition.x = event.pageX;
-        this.mousePosition.y = event.pageY;
+        this.mousePosition.x = event.pageX - this.topLeft.x;
+        this.mousePosition.y = event.pageY - this.topLeft.y;
     },
 
     addCanvasLayerWithId: function(canvasId, layerClass)
     {
-        log('EPPZScene addCanvasWithId: '+canvasId);
-
         //Get <canvas> context.
         var canvas = document.getElementById(canvasId);
         if (canvas.getContext)
         {
             //Create EPPZCanvas, collect.
-            var layer = new layerClass(canvas.getContext('2d'), this);
+            //layerClass = layerClass || document[canvasId]; //Layer class could be the same as canvasId.
+            var layer = new layerClass(canvas.getContext('2d'), this, this.sampleWindowSize);
             this.layers.push(layer);
         }
     },

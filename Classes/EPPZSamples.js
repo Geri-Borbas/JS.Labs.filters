@@ -9,13 +9,4 @@
  *
  */
 
-var EPPZMonitor = EPPZLayer.extend
-({
-    tick: function()
-    {
-        this.redrawCurrentSampleWindow();
-
-        //Debug.
-        this.drawStamp();
-    }
-});
+var EPPZSamples = EPPZLayer.extend({});

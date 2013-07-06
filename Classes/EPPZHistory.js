@@ -9,14 +9,12 @@
  *
  */
 
-var EPPZFilters = EPPZLayer.extend
-({
-    tick: function()
-    {
-        this.context.strokeStyle = 'darkgrey';
-        this.strokeToCurrentSample();
+var EPPZHistory = EPPZLayer.extend(
+{
+    color: function() { return '#EEE'; },
 
-        //Debug.
-        this.drawStamp();
+    render: function()
+    {
+        this.lineToSample();
     }
 });

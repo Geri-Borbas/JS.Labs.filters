@@ -13,45 +13,60 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>labs!filtering 1.0.1</title>
+<title>labs!filtering 1.0.4</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
 
-    <!--Scene-->
-    <div id="scene">
-        <canvas id="signal" width="300" height="300"></canvas>
-        <canvas id="filters" width="300" height="300"></canvas>
-    </div>
-
     <!--Controls-->
     <section>
-        <button title="start" onclick="scene.start();">►</button>
-        <button title="stop" onclick="scene.stop();">■</button>
+
+        <button title="start" onclick="viewController.scene.start();" class="square">►</button>
+        <button title="stop" onclick="viewController.scene.stop();" class="square">■</button>
         <input id="fpsSlider" type="range" value="1" min="1" max="60"
                onchange="viewController.fpsSliderValueChanged();"
                onmouseup="viewController.fpsSliderReleased();">
         <label id="fpsValueLabel"><strong>1</strong> fps</label>
+
+        <button title="collapse" onclick="viewController.collapseCanvases();">Collapse</button>
+        <button title="expand" onclick="viewController.expandCanvases();">Expand</button>
+
     </section>
 
+    <!--Scene-->
+    <div id="scene">
+        <canvas id="history" width="300" height="300"></canvas>
+        <canvas id="samples" width="300" height="300"></canvas>
+        <canvas id="randomFilter" width="300" height="300"></canvas>
+        <canvas id="movingAverage" width="300" height="300"></canvas>
+    </div>
 
-<!--Import-->
-<script src="js/Class.js"></script>
-<script src="js/helpers.js"></script>
-<script src="js/EPPZScene.js"></script>
-<script src="js/EPPZLayer.js"></script>
-<script src="js/EPPZMonitor.js"></script>
-<script src="js/EPPZFilters.js"></script>
-<script src="js/ViewController.js"></script>
+    <!--Tools-->
+    <script src="Classes/eppz!kit.js"></script>
+    <script src="Classes/Class.js"></script>
+    <script src="Classes/helpers.js"></script>
 
-<!--Load view-->
-<script language="javascript">
+    <!--Base-->
+    <script src="Classes/EPPZScene.js"></script>
+    <script src="Classes/EPPZLayer.js"></script>
 
-    var viewController = new ViewController();
-    viewController.initWithFps(45);
+    <!--Layers-->
+    <script src="Classes/EPPZSamples.js"></script>
+    <script src="Classes/EPPZHistory.js"></script>
+    <script src="Classes/EPPZRandomFilter.js"></script>
+    <script src="Classes/EPPZMovingAverage.js"></script>
 
-</script>
+    <!--View-->
+    <script src="Classes/ViewController.js"></script>
+
+    <!--Load view-->
+    <script language="javascript">
+
+        var viewController = new ViewController();
+        viewController.initWithFps(60);
+
+    </script>
 
 </body>
 </html>
