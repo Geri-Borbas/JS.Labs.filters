@@ -9,38 +9,14 @@
  *
  */
 
-body
-{
-    font: 12px Arial;
-    margin: 0px;
-}
+var EPPZFilters = EPPZLayer.extend
+({
+    tick: function()
+    {
+        this.context.strokeStyle = 'darkgrey';
+        this.strokeToCurrentSample();
 
-canvas
-{
-    width: 300px;
-    height: 300px;
-
-    margin: 20px 0px 0px 20px;
-    border: 1px solid gray;
-    background-color: lightgray;
-}
-
-section
-{
-    margin: 20px 0px 0px 20px;
-    position: relative;
-}
-
-button
-{
-    width: 30px;
-    height: 30px;
-
-    margin: 5px 0px 0px 0px;
-}
-
-input
-{
-    top: 6px;
-    position: relative;
-}
+        //Debug.
+        this.drawStamp();
+    }
+});

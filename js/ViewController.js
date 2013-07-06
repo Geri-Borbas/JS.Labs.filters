@@ -9,38 +9,48 @@
  *
  */
 
-body
-{
-    font: 12px Arial;
-    margin: 0px;
-}
+//EPPZMonitor (simply display input as it is).
+var ViewController = Class.extend
+({
 
-canvas
-{
-    width: 300px;
-    height: 300px;
+    //Creation.
+    construct: function()
+    {
+        //UI outlets.
+        this.slider = document.getElementById('fpsSlider');
+        this.label = document.getElementById('fpsValueLabel');
 
-    margin: 20px 0px 0px 20px;
-    border: 1px solid gray;
-    background-color: lightgray;
-}
+        //Assemble scene.
+        this.scene = new EPPZScene();
+        this.scene.autoSuspendFrameLimit = 300;
+        this.scene.addCanvasLayerWithId('signal', EPPZMonitor);
+        this.scene.addCanvasLayerWithId('filters', EPPZFilters);
+    },
 
-section
-{
-    margin: 20px 0px 0px 20px;
-    position: relative;
-}
+    initWithFps: function(fps)
+    {
+        //Setup.
+        this.scene.fps = fps;
+        this.slider.value = fps;
+        this.label.innerHTML = '<strong>'+this.slider.value+'</strong> fps';
 
-button
-{
-    width: 30px;
-    height: 30px;
+        //Go.
+        this.scene.start();
+    },
 
-    margin: 5px 0px 0px 0px;
-}
+    //UI.
+    fpsSliderValueChanged: function()
+    {
+        this.label.innerHTML = '<strong>'+this.slider.value+'</strong> fps';
+    },
 
-input
-{
-    top: 6px;
-    position: relative;
-}
+    //UX.
+    fpsSliderReleased: function()
+    {
+        //Restart scene.
+        this.scene.stop();
+        this.scene.fps = this.slider.value;
+        this.scene.start();
+    }
+
+});
