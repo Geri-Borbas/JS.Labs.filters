@@ -9,18 +9,26 @@
  *
  */
 
+/*
+ Layer that visualizes samples.
+ */
+
 var EPPZLayer = Class.extend
 ({
-    construct: function(context, scene, sampleWindowSize)
+    construct: function(canvas, scene)
     {
-        //<canvas> context to draw on.
-        this.context = context;
+        //<canvas> reference.
+        this.canvas = canvas;
+
+        //Get context to draw on.
+        if (canvas.getContext)
+        { this.context = canvas.getContext('2d'); }
 
         //Reference to the parent scene.
         this.scene = scene;
 
         //Samples.
-        this.sampleWindowSize = sampleWindowSize || 50;
+        this.sampleWindowSize = this.scene.sampleWindowSize;
         this.samples = [];
 
         //Reference the topmost sample.
@@ -29,17 +37,17 @@ var EPPZLayer = Class.extend
 
     //Animation frames.
 
-        update: function(sample)
+        update: function(mousePositionSample)
         {
             //If window is empty, fill it up with the first sample.
             if (this.sample == null)
             {
-                for (var index = 0; index < this.sampleWindowSize; index++) { this.samples.push(new Point(sample)); }
-                this.context.moveTo(sample.x, sample.y); //Model releated, but efficient.
+                for (var index = 0; index < this.sampleWindowSize; index++)
+                { this.samples.push(new Point(mousePositionSample)); }
             }
 
             //Create a sample copy, stack to the sample window.
-            this.samples.unshift(new Point(sample));
+            this.samples.unshift(new Point(mousePositionSample));
             this.samples.pop();
 
             //Reference the topmost sample.
@@ -47,18 +55,6 @@ var EPPZLayer = Class.extend
 
             //Filter samples whether implemented.
             this.filter();
-        },
-
-    //Subclass templates.
-
-        color: function()
-        {
-            return 'darkgrey';
-        },
-
-        filter: function()
-        {
-            //Subclass template.
         },
 
         tick: function()
@@ -69,13 +65,24 @@ var EPPZLayer = Class.extend
             this.drawStamp();
         },
 
+    //Subclass templates.
+
+        color: function()
+        { return 'darkgrey'; },
+
+        filter: function()
+        { /* Subclass template. */ },
+
         render: function()
         {
+            //Default implementation.
             this.renderSampleWindow();
             this.drawSampleCircle();
         },
 
-    //Drawing methods.
+    /*
+        Drawing tools.
+     */
 
         lineToSample: function()
         {
@@ -110,7 +117,9 @@ var EPPZLayer = Class.extend
             this.context.stroke();
         },
 
-    //Debug.
+    /*
+        Debug tools.
+     */
 
         drawTextBox: function(message, left, top, width, height)
         {
@@ -130,12 +139,10 @@ var EPPZLayer = Class.extend
             this.context.fillText(message, left + 4, top + 4 + 11, width);
         },
 
-        drawStamp: function()
-        {
-            //Debug stamps.
-            this.drawFramesStamp();
-        },
+        drawFramesStamp: function()
+        { this.drawTextBox(this.scene.frame); },
 
-        drawFramesStamp: function() { this.drawTextBox(this.scene.frame); }
+        drawStamp: function()
+        { this.drawFramesStamp(); }
 
 });

@@ -22,11 +22,16 @@ var ViewController = Class.extend
         this.canvases = document.getElementsByTagName('canvas');
 
         //Assemble scene.
-        this.scene = new EPPZScene('scene', 100, 0); //Construct with (<div> id, sampleWindowSize, autoStopFrameLimit).
-        this.scene.addCanvasLayerWithId('history', EPPZHistory);
-        this.scene.addCanvasLayerWithId('samples', EPPZSamples);
-        this.scene.addCanvasLayerWithId('onePoleFilter', EPPZOnePoleFilter);
-        this.scene.addCanvasLayerWithId('movingAverage', EPPZMovingAverage);
+        this.scene = new EPPZScene(
+            {
+                'divId' : 'scene',
+                'width' : 300,
+                'height' : 300,
+                'sampleWindowSize' : 100,
+                'autoStopAtFrame' : 300,
+                'fps' : 45
+            });
+        this.scene.addNewLayer('samples', EPPZSamples);
     },
 
     initWithFps: function(fps)

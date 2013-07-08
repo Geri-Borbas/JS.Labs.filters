@@ -13,7 +13,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>labs!filtering 1.0.5</title>
+<title>labs!filtering 1.1.0</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
@@ -36,26 +36,26 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
     <!--Scene-->
     <div id="scene">
-        <canvas id="history" width="300" height="300"></canvas>
-        <canvas id="samples" width="300" height="300"></canvas>
-        <canvas id="onePoleFilter" width="300" height="300"></canvas>
-        <canvas id="movingAverage" width="300" height="300"></canvas>
+        <!--A lovely place for <canvas> layers-->
     </div>
 
     <!--Tools-->
-    <script src="Classes/eppz!kit.js"></script>
-    <script src="Classes/Class.js"></script>
-    <script src="Classes/helpers.js"></script>
+    <script src="Classes/Tools/eppz!kit.js"></script>
+    <script src="Classes/Tools/Class.js"></script>
+    <script src="Classes/Tools/helpers.js"></script>
 
     <!--Base-->
     <script src="Classes/EPPZScene.js"></script>
     <script src="Classes/EPPZLayer.js"></script>
 
     <!--Layers-->
-    <script src="Classes/EPPZSamples.js"></script>
+
+    <script src="Classes/Layers/EPPZSamples.js"></script>
+    <!--
     <script src="Classes/EPPZHistory.js"></script>
     <script src="Classes/EPPZOnePoleFilter.js"></script>
     <script src="Classes/EPPZMovingAverage.js"></script>
+    -->
 
     <!--View-->
     <script src="Classes/ViewController.js"></script>

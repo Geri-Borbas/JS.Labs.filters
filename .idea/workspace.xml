@@ -2,26 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="614c2bf3-3f41-489d-bf90-244128d996ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes/EPPZOnePoleFilter.js" afterPath="$PROJECT_DIR$/Classes/EPPZOnePoleFilter.js" />
+      <change type="MOVED" beforePath="C:\Users\borbasg\Tools\labs!filters\Classes\Class.js" afterPath="$PROJECT_DIR$/Classes/Tools/Class.js" />
+      <change type="MOVED" beforePath="C:\Users\borbasg\Tools\labs!filters\Classes\EPPZHistory.js" afterPath="$PROJECT_DIR$/Classes/Layers/EPPZHistory.js" />
+      <change type="MOVED" beforePath="C:\Users\borbasg\Tools\labs!filters\Classes\EPPZMovingAverage.js" afterPath="$PROJECT_DIR$/Classes/Layers/EPPZMovingAverage.js" />
+      <change type="MOVED" beforePath="C:\Users\borbasg\Tools\labs!filters\Classes\EPPZOnePoleFilter.js" afterPath="$PROJECT_DIR$/Classes/Layers/EPPZOnePoleFilter.js" />
+      <change type="MOVED" beforePath="C:\Users\borbasg\Tools\labs!filters\Classes\EPPZSamples.js" afterPath="$PROJECT_DIR$/Classes/Layers/EPPZSamples.js" />
+      <change type="MOVED" beforePath="C:\Users\borbasg\Tools\labs!filters\Classes\eppz!kit.js" afterPath="$PROJECT_DIR$/Classes/Tools/eppz!kit.js" />
+      <change type="MOVED" beforePath="C:\Users\borbasg\Tools\labs!filters\Classes\helpers.js" afterPath="$PROJECT_DIR$/Classes/Tools/helpers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes/EPPZLayer.js" afterPath="$PROJECT_DIR$/Classes/EPPZLayer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes/EPPZScene.js" afterPath="$PROJECT_DIR$/Classes/EPPZScene.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes/ViewController.js" afterPath="$PROJECT_DIR$/Classes/ViewController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles.css" afterPath="$PROJECT_DIR$/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Filtering.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/canvas.html" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373028769201" ignored="false" />
-    <file path="/styles.css" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373082958556" ignored="false" />
+    <file path="/styles.css" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373286167747" ignored="false" />
     <file path="/eppz!scene.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373073844650" ignored="false" />
     <file path="/eppz!filters.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373020096625" ignored="false" />
     <file path="/ui.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373028339634" ignored="false" />
     <file path="/controller.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373074705877" ignored="false" />
-    <file path="/README.md" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373083292773" ignored="false" />
-    <file path="/Dummy.txt" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373086061028" ignored="false" />
-    <file path="/index.html" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373086120768" ignored="false" />
+    <file path="/README.md" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373291661679" ignored="false" />
+    <file path="/Dummy.txt" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373285214208" ignored="false" />
+    <file path="/index.html" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373291491977" ignored="false" />
     <file path="/helpers.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373073524106" ignored="false" />
-    <file path="/EPPZLayer.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373084865458" ignored="false" />
+    <file path="/EPPZLayer.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373288770708" ignored="false" />
     <file path="/EPPZFilters.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373078405951" ignored="false" />
-    <file path="/EPPZScene.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373082861956" ignored="false" />
-    <file path="/ViewController.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373086095894" ignored="false" />
+    <file path="/EPPZScene.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373289785537" ignored="false" />
+    <file path="/ViewController.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373289526514" ignored="false" />
     <file path="/EPPZMonitor.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373078746839" ignored="false" />
     <file path="/EPPZSamples.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373079323368" ignored="false" />
     <file path="/EPPZMovingAverage.js" changelist="614c2bf3-3f41-489d-bf90-244128d996ba" time="1373080347759" ignored="false" />
@@ -45,7 +56,72 @@
     <favorites_list name="Filtering" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="27" selection-start="1337" selection-end="1337" vertical-scroll-proportion="-3.9230769">
+              <folding>
+                <element signature="e#0#1108#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="23" selection-start="669" selection-end="669" vertical-scroll-proportion="0.20757021">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/ViewController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="31" selection-start="1646" selection-end="1647" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#1128#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EPPZLayer.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/EPPZLayer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="33" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EPPZHistory.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/Layers/EPPZHistory.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="36" selection-start="1204" selection-end="1204" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#1128#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helpers.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/Tools/helpers.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="24" selection-start="1275" selection-end="1275" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#1128#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -74,23 +150,23 @@
         <option value="$PROJECT_DIR$/Classes/EPPZMonitor.js" />
         <option value="$PROJECT_DIR$/Classes/EPPZMovingAverage.js" />
         <option value="$PROJECT_DIR$/Classes/EPPZHistory.js" />
-        <option value="$PROJECT_DIR$/Classes/EPPZScene.js" />
-        <option value="$PROJECT_DIR$/styles.css" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Classes/EPPZRandomFilter.js" />
+        <option value="$PROJECT_DIR$/Classes/EPPZOnePoleFilter.js" />
         <option value="$PROJECT_DIR$/Classes/EPPZLayer.js" />
         <option value="$PROJECT_DIR$/Classes/ViewController.js" />
-        <option value="$PROJECT_DIR$/Classes/EPPZOnePoleFilter.js" />
+        <option value="$PROJECT_DIR$/Classes/EPPZScene.js" />
+        <option value="$PROJECT_DIR$/styles.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1468" />
-    <option name="y" value="-274" />
-    <option name="width" value="1818" />
-    <option name="height" value="1128" />
+    <option name="x" value="199" />
+    <option name="y" value="133" />
+    <option name="width" value="1679" />
+    <option name="height" value="1015" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -167,6 +243,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eppz!filters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labs!filters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eppz!filters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="labs!filters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Layers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -176,12 +288,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="fileTemplates" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
-      <server id="f2da53d7-43b0-4056-ac8f-accab51f4529">
+      <server id="cd336279-bbac-474a-9bb8-fa1280b53158">
         <serverdata />
       </server>
     </servers>
@@ -191,6 +303,8 @@
       <recent name="$PROJECT_DIR$/Classes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\borbasg\Tools\labs!filters\Classes\Tools" />
+      <recent name="C:\Users\borbasg\Tools\labs!filters\Classes\Layers" />
       <recent name="$PROJECT_DIR$/Classes" />
       <recent name="$PROJECT_DIR$" />
       <recent name="C:\Users\borbasg\Tools\Filtering\js" />
@@ -236,14 +350,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1468" y="-274" width="1818" height="1128" extended-state="0" />
-    <editor active="false" />
+    <frame x="199" y="133" width="1679" height="1015" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23250565" sideWeight="0.859127" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1772009" sideWeight="0.859127" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15646258" sideWeight="0.859127" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15275201" sideWeight="0.859127" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.188" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -319,7 +433,7 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Classes/EPPZHistory.js">
+    <entry file="file://$PROJECT_DIR$/Classes/Layers/EPPZHistory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="0" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0">
           <folding>
@@ -342,23 +456,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/Class.js">
+    <entry file="file://$PROJECT_DIR$/Classes/Tools/Class.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="48" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/helpers.js">
+    <entry file="file://$PROJECT_DIR$/Classes/Tools/eppz!kit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="19" selection-start="1509" selection-end="1509" vertical-scroll-proportion="0.0">
+        <state line="62" column="0" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.5521472" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="23" selection-start="1276" selection-end="1276" vertical-scroll-proportion="0.4473684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/EPPZScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="0" selection-start="3399" selection-end="3399" vertical-scroll-proportion="0.4643766">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/Layers/EPPZMovingAverage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="42" selection-start="1438" selection-end="1438" vertical-scroll-proportion="0.45665446">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/Layers/EPPZOnePoleFilter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="10" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.265625">
           <folding>
             <element signature="e#0#1128#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/EPPZHistory.js">
+    <entry file="file://$PROJECT_DIR$/Classes/Layers/EPPZSamples.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="15" selection-start="1134" selection-end="1145" vertical-scroll-proportion="0.040865384">
+          <folding>
+            <element signature="e#0#1128#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/Layers/EPPZHistory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="36" selection-start="1204" selection-end="1204" vertical-scroll-proportion="0.0">
           <folding>
@@ -367,78 +516,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/eppz!kit.js">
+    <entry file="file://$PROJECT_DIR$/Classes/Tools/helpers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.5521472" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/EPPZSamples.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="3" selection-start="1128" selection-end="1128" vertical-scroll-proportion="0.0">
+        <state line="17" column="24" selection-start="1275" selection-end="1275" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#1128#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="17" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/EPPZScene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="1440" selection-end="1440" vertical-scroll-proportion="-0.12529834">
-          <folding>
-            <element signature="e#0#1128#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.3090909">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="19" selection-start="1440" selection-end="1440" vertical-scroll-proportion="0.13075314">
+        <state line="15" column="27" selection-start="1337" selection-end="1337" vertical-scroll-proportion="-3.9230769">
           <folding>
             <element signature="e#0#1108#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/EPPZOnePoleFilter.js">
+    <entry file="file://$PROJECT_DIR$/Classes/ViewController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="10" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.19897959">
+        <state line="28" column="31" selection-start="1646" selection-end="1647" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#1128#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/EPPZMovingAverage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="42" selection-start="1438" selection-end="1438" vertical-scroll-proportion="0.34126163">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Classes/EPPZLayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1953" selection-end="1953" vertical-scroll-proportion="0.15511893">
-          <folding />
+        <state line="22" column="33" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/ViewController.js">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="74" selection-start="1824" selection-end="1824" vertical-scroll-proportion="0.31023785">
+        <state line="10" column="23" selection-start="669" selection-end="669" vertical-scroll-proportion="0.20757021">
           <folding />
         </state>
       </provider>

@@ -9,35 +9,41 @@
  *
  */
 
+/*
+    Scene with sampling mouse coordinates in a sample window.
+ */
+
 var EPPZScene = Class.extend
 ({
-    construct: function(divId, sampleWindowSize, autoStopFrameLimit)
+    construct: function(parameters)
     {
-        //<canvas> collection.
-        this.layers = [];
+        //<div> reference.
+        this.div = document.getElementById(parameters['divId']);
+        this.topLeft = new Point(this.div.offsetLeft, this.div.offsetTop);
 
-        //Characteristics.
-        this.sampleWindowSize = sampleWindowSize || 50;
-        this.autoSuspendFrameLimit = autoStopFrameLimit || 0;
+        //Dimensions.
+        this.width = parameters['width'];
+        this.height = parameters['height'];
 
-        //Counter.
+        //Basic characteristics.
+        this.sampleWindowSize = parameters['sampleWindowSize'] || 50;
+        this.autoStopAtFrame = parameters['autoStopAtFrame'] || 0;
+
+        //Animation.
         this.stopped = true;
         this.frame = 0;
+        this.timer = null;
+        this.fps = parameters['fps'] || 60; //Default.
 
-        //Catch pointer movement.
+        //Catch latest pointer movement.
         var _this = this;
         this.mousePosition = new Point();
         document.onmousemove = function(event) { _this.mouseMoved(event); }
 
-        //Animation.
-        this.timer = null;
-        this.fps = 60; //Default.
+        //EPPZLayer collection.
+        this.layers = [];
 
-        //<div> reference.
-        this.div = document.getElementById(divId);
-        this.topLeft = new Point(this.div.offsetLeft, this.div.offsetTop);
-
-        log('EPPZScene created at '+this.topLeft.stringValue()+' running at '+this.fps+' fps.');
+        log('EPPZScene created at '+this.topLeft.stringValue()+' with dimensions ['+this.width+','+this.height+'] running at '+this.fps+' fps.');
     },
 
     mouseMoved: function(event)
@@ -46,25 +52,28 @@ var EPPZScene = Class.extend
         this.mousePosition.y = event.pageY - this.topLeft.y;
     },
 
-    addCanvasLayerWithId: function(canvasId, layerClass)
+    addNewLayer: function(canvasId, layerClass)
     {
-        //Get <canvas> context.
-        var canvas = document.getElementById(canvasId);
-        if (canvas.getContext)
-        {
-            //Create EPPZCanvas, collect.
-            //layerClass = layerClass || document[canvasId]; //Layer class could be the same as canvasId.
-            var layer = new layerClass(canvas.getContext('2d'), this, this.sampleWindowSize);
-            this.layers.push(layer);
-        }
+        //Create <canvas> element.
+        var canvas = document.createElement('canvas');
+        canvas.id = canvasId;
+        canvas.width  = this.width;
+        canvas.height = this.height;
+        canvas.style.zIndex = (self.layers) ? self.layers.length : 0;
+
+        //Insert to DOM.
+        this.div.appendChild(canvas);
+
+        //Create, collect layer.
+        var layer = new layerClass(canvas, this);
+        this.layers.push(layer);
     },
 
     tick: function()
     {
-        if (this.stopped) return;
-
-        shouldStop = (this.autoSuspendFrameLimit > 0 && this.frame >= this.autoSuspendFrameLimit);
-        if (shouldStop) this.suspendAnimation();
+        //Auto stop feature.
+        shouldStopAtThisFrame = (this.autoStopAtFrame > 0 && this.frame >= this.autoStopAtFrame);
+        if (shouldStopAtThisFrame) this.stop();
 
         this.frame++;
 
@@ -86,21 +95,14 @@ var EPPZScene = Class.extend
         start: function()
         {
             var _this = this;
-            log('start at '+this.fps);
+            log('EPPZScene start at '+this.fps+' fps.');
             this.timer = setInterval(function(){ _this.tick(); }, 1000.0 / this.fps);
-            this.resumeAnimation();
         },
 
         stop: function()
         {
             clearInterval(this.timer);
-            this.suspendAnimation();
-        },
-
-        suspendAnimation: function()
-        { this.stopped = true; this.frame = 0; },
-
-        resumeAnimation: function()
-        { this.stopped = false; }
+            this.frame = 0;
+        }
 
 });

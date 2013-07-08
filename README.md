@@ -12,6 +12,13 @@ Having this, I could split up implementations in an efficient way. `EPPZScene` m
 
 I still have no separate interface files, private/protected properties, but this is still a good start.
 
+#### Version tracking
+
++ 1.0.5
+    * Scene now creates `<canvas>` DOM elements on its own
+    * Scene constructor parameters exposed to an associative array
+    * Layers takes a `<canvas>` element, and a scene reference as constructor input
+
 #### License
 
 > Licensed under the [Open Source MIT license](http://en.wikipedia.org/wiki/MIT_License).
