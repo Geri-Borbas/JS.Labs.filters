@@ -15,6 +15,8 @@ var EPPZHistory = EPPZLayer.extend(
 
     render: function()
     {
+        //Stoke latest neighbouring samples.
+
         this.lineToSample();
     }
 });
