@@ -34,6 +34,11 @@ body
     position: relative;
 }
 
+.layer
+{
+    display: inline-block;
+}
+
 canvas
 {
     margin: 0px 5px 5px 0px;
@@ -50,6 +55,8 @@ canvas
 
 section
 {
+    min-width: 450px;
+
     margin: 20px 0px 0px 20px;
     position: relative;
 }

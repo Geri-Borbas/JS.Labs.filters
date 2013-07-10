@@ -11,7 +11,7 @@
 
 var EPPZHistory = EPPZLayer.extend(
 {
-    render: function()
+    draw: function()
     {
         this.strokeLatestNeighbouringSamples();
     }

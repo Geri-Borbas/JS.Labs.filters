@@ -9,11 +9,12 @@
  *
  */
 
-var EPPZSamples = EPPZLayer.extend(
+var EPPZSamples = EPPZLayer.extend
+({
+    draw: function()
     {
-        render: function()
-        {
-            this.clear();
-            this.renderSampleWindow();
-        }
-    });
+        this.clear();
+        this.renderSampleWindow();
+        this.drawSampleCircle();
+    }
+});

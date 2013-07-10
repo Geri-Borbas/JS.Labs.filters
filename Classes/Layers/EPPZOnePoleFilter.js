@@ -11,16 +11,27 @@
 
 var EPPZOnePoleFilter = EPPZLayer.extend
 ({
-    color: function()
-    { return 'red'; },
-
-    filter: function()
+    init: function()
     {
-        /*
-        var filter = 0.2;
-        this.filteredSample.x = this.sample.x * filter + this.previousSample.x * (1.0 - filter);
-        this.filteredSample.y = this.sample.y * filter + this.previousSample.y * (1.0 - filter);
-        */
-    }
+        this.filter = 0.05;
+        this.dotLayer = this.addSubLayer('onePoleFilterDot', EPPZDot, this.color);
+    },
 
+    updateFilteredSamples: function()
+    {
+        //Save previous updateFilteredSamples value.
+        this.previousFilteredSample = new Point(this.filteredSample);
+
+        //Filter.
+        this.filteredSample.x = this.sample.x * this.filter + this.previousFilteredSample.x * (1.0 - this.filter);
+        this.filteredSample.y = this.sample.y * this.filter + this.previousFilteredSample.y * (1.0 - this.filter);
+
+        //Pass new filtered sample to dot layer.
+        this.dotLayer.update(this.filteredSample);
+    },
+
+    draw: function()
+    {
+        this.strokeFilteredSamples();
+    }
 });

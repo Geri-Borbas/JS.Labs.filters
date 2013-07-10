@@ -40,8 +40,10 @@ var EPPZScene = Class.extend
         this.mousePosition = new Point();
         document.onmousemove = function(event) { _this.mouseMoved(event); }
 
-        //EPPZLayer collection.
-        this.layers = [];
+        //Root EPPZLayer.
+        log('EPPZScene is this '+this);
+
+        this.rootLayer = new EPPZLayer(this, 'root'); //Construct with scene, name, [color].
 
         log('EPPZScene created at '+this.topLeft.stringValue()+' with dimensions ['+this.width+','+this.height+'] running at '+this.fps+' fps.');
     },
@@ -52,24 +54,6 @@ var EPPZScene = Class.extend
         this.mousePosition.y = event.pageY - this.topLeft.y;
     },
 
-    addNewLayer: function(canvasId, layerClass, color)
-    {
-        //Create <canvas> element.
-        var canvas = document.createElement('canvas');
-        canvas.id = canvasId;
-        canvas.width  = this.width;
-        canvas.height = this.height;
-        canvas.style.zIndex = (self.layers) ? self.layers.length : 0;
-
-        //Insert to DOM.
-        this.div.appendChild(canvas);
-
-        //Create, collect layer.
-        var layer = new layerClass(canvas, this);
-        layer.color = color;
-        this.layers.push(layer);
-    },
-
     tick: function()
     {
         //Auto stop feature.
@@ -78,17 +62,11 @@ var EPPZScene = Class.extend
 
         this.frame++;
 
-        //Frame for each canvas.
-        for (var eachCanvasIndex in this.layers)
-        {
-            eachLayer = this.layers[eachCanvasIndex];
+        //update() layer tree.
+        this.rootLayer.update(this.mousePosition);
 
-            //update().
-            eachLayer.update(this.mousePosition);
-
-            //tick().
-            this.layers[eachCanvasIndex].tick();
-        }
+        //render() layer tree.
+        this.rootLayer.render();
     },
 
     //Animation.

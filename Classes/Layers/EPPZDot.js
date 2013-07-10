@@ -11,7 +11,7 @@
 
 var EPPZDot = EPPZLayer.extend(
 {
-    render: function()
+    draw: function()
     {
         this.clear();
         this.drawSampleCircle();

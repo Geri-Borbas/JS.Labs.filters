@@ -6,13 +6,25 @@ See a [Live Demo](http://eppz.github.io/labs-filters/versions/current/) on the G
 
 #### More objective JavaScript
 
-As I come from Objective-C world, this draft is also outlines attempts to write JavaScript in an object-oriented MVC manner. Using a tiny little snippet `Class.js` it is relatively easy to define classes, put them in separate files, split up logic into model as `EPPZScene`, view as `EPPZLayer` and subclasses and controller as `ViewController` classes.
+As I come from Objective-C world, this draft is also outlines attempts to write JavaScript in an object-oriented MVC manner. Using a tiny little snippet `Class.js` it is relatively easy to define classes, put them in separate files, setup inharitance/hierarchy, split up logic into model as `EPPZScene`, view as `EPPZLayer` and subclasses and controller as `ViewController` classes.
 
 Having this, I could split up implementations in an efficient way. `EPPZScene` maintains canvas layers, mouse events and animation, `EPPZLayer` holds common features of a generic canvas layer, windowing samples (yet mouse coordinates). Subclasses `EPPZHistory`, `EPPZSamples`, etc. implement only the concrete features specific for this draft namely the filtering methods, and some UI specific detail.
 
 I still have no separate interface files, private/protected properties, but this is still a good start.
 
 #### Version tracking
+
++ 1.3.0
+    * Refactored layer tree
+        * Layers maintains their own layer collection
+        * Scene now have a root layer only
+        * `<canvas>` tags are wrapped around with a `<div>`
+        * `<div>` tree reflects layer hierarchy
+        * addSublayer gives back a layer reference (for controllers and parents)
+    * Reintroduced `EPPZOnePoleFilter`
+        * A layer composite of `EPPZHistory` and `EPPZDot`
+    * Tiny UI hooks
+        * Slider to `EPPZOnePoleFilter.filter` property
 
 + 1.1.2
     * Created some Layer subclass

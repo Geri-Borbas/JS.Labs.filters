@@ -17,24 +17,26 @@ var ViewController = Class.extend
     construct: function()
     {
         //UI outlets.
-        this.slider = document.getElementById('fpsSlider');
-        this.label = document.getElementById('fpsValueLabel');
+        this.fpsSlider = document.getElementById('fpsSlider');
+        this.fpsLabel = document.getElementById('fpsValueLabel');
+        this.filterSlider = document.getElementById('filterSlider');
+        this.filterLabel = document.getElementById('filterValueLabel');
+
         this.canvases = document.getElementsByTagName('canvas');
 
         //Assemble scene.
         this.scene = new EPPZScene(
             {
                 'divId' : 'scene',
-                'width' : 300,
-                'height' : 300,
+                'width' : 150,
+                'height' : 150,
                 'sampleWindowSize' : 100,
                 'autoStopAtFrame' : 600,
                 'fps' : 60
             });
-        this.scene.addNewLayer('history', EPPZHistory, 'blue');
-        this.scene.addNewLayer('historyDot', EPPZDot, 'blue');
-        this.scene.addNewLayer('samples', EPPZSamples, 'red');
-        this.scene.addNewLayer('samplesDot', EPPZDot, 'red');
+        this.scene.rootLayer.addSubLayer('history', EPPZHistory, '#CCC');
+        this.scene.rootLayer.addSubLayer('samples', EPPZSamples, '#AAA');
+        this.onePoleFilterLayer = this.scene.rootLayer.addSubLayer('onePoleFilterHistory', EPPZOnePoleFilter, 'red');
 
     },
 
@@ -42,17 +44,32 @@ var ViewController = Class.extend
     {
         //Setup.
         this.scene.fps = fps;
-        this.slider.value = fps;
-        this.label.innerHTML = '<strong>'+this.slider.value+'</strong> fps';
+        this.fpsSlider.value = fps;
+        this.fpsLabel.innerHTML = '<strong>'+this.fpsSlider.value+'</strong> fps';
 
         //Go.
         this.scene.start();
     },
 
-    //UI.
+    //Frame rate control.
     fpsSliderValueChanged: function()
     {
-        this.label.innerHTML = '<strong>'+this.slider.value+'</strong> fps';
+        this.fpsLabel.innerHTML = '<strong>'+this.fpsSlider.value+'</strong> fps';
+    },
+
+    fpsSliderReleased: function()
+    {
+        //Restart scene.
+        this.scene.stop();
+        this.scene.fps = this.fpsSlider.value;
+        this.scene.start();
+    },
+
+    //One-pole filter control.
+    filterSliderValueChanged: function()
+    {
+        this.filterLabel.innerHTML = '<strong>'+this.filterSlider.value+'</strong>';
+        this.onePoleFilterLayer.filter = this.filterSlider.value;
     },
 
     collapseCanvases: function()
@@ -67,14 +84,5 @@ var ViewController = Class.extend
         for (var i = 0; i < this.canvases.length; i++)
             this.canvases[i].removeClass('collapse');
     },
-
-    //UX.
-    fpsSliderReleased: function()
-    {
-        //Restart scene.
-        this.scene.stop();
-        this.scene.fps = this.slider.value;
-        this.scene.start();
-    }
 
 });
