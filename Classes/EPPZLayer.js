@@ -144,6 +144,18 @@ var EPPZLayer = Class.extend
             this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
         },
 
+        clearAlongSublayers: function()
+        {
+            //clear() for each sublayer.
+            for (var eachLayerIndex in this.layers)
+            {
+                eachLayer = this.layers[eachLayerIndex];
+                this.layers[eachLayerIndex].clear();
+            }
+
+            this.clear();
+        },
+
         strokeLatestNeighbouringSamples: function()
         {
             //Simply a line towards the topmost sample.

@@ -13,7 +13,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>labs!filtering 1.4.0</title>
+<title>labs!filtering 1.4.5</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
@@ -35,20 +35,21 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
         <div>
             <label class="variableName">Filter</label>
-            <input id="filterSlider" type="range" value="0.05" min="0" max="1" step=0.01
+            <input id="filterSlider" type="range" value="20" min="1" max="100"
                    onchange="viewController.filterSliderValueChanged();">
-            <label class="variablevalue" id="filterValueLabel"><strong>0.05</strong></label>
+            <label class="variablevalue" id="filterValueLabel"><strong>0.2</strong></label>
         </div>
 
         <div>
             <label class="variableName">Window size</label>
-            <input id="windowSizeSlider" type="range" value="100" min="0" max="100"
+            <input id="windowSizeSlider" type="range" value="20" min="1" max="100"
                    onchange="viewController.windowSizeSliderValueChanged();">
-            <label class="variablevalue" id="windowSizeValueLabel"><strong>100</strong></label>
+            <label class="variablevalue" id="windowSizeValueLabel"><strong>20</strong></label>
         </div>
 
         <button title="collapse" onclick="viewController.collapseCanvases();">Collapse</button>
         <button title="expand" onclick="viewController.expandCanvases();">Expand</button>
+        <button title="clear" onclick="viewController.clearLayers();">Clear</button>
 
     </section>
 
@@ -61,6 +62,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <script src="Classes/Tools/eppz!kit.js"></script>
     <script src="Classes/Tools/Class.js"></script>
     <script src="Classes/Tools/helpers.js"></script>
+    <script src="Classes/Tools/MouseWheelListener.js"></script>
 
     <!--Base-->
     <script src="Classes/EPPZScene.js"></script>
@@ -70,7 +72,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <script src="Classes/Layers/EPPZDot.js"></script>
     <script src="Classes/Layers/EPPZHistory.js"></script>
     <script src="Classes/Layers/EPPZSamples.js"></script>
-    <script src="Classes/Layers/EPPZSamplesWithDot.js"></script>
     <script src="Classes/Layers/EPPZOnePoleFilter.js"></script>
     <script src="Classes/Layers/EPPZMovingAverage.js"></script>
 

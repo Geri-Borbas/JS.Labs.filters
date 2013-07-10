@@ -14,7 +14,11 @@ I still have no separate interface files, private/protected properties, but this
 
 #### Version tracking
 
-+ 1.4.0
++ 1.4.5
+    * Mouse wheel input for sliders (more smooth UX for exploring)
+    * Awesome `clearLayers()` feature
+
++ 1.4.0 (deployed to GitHub page)
     * Reintroduced `EPPZMovingAverage`
         * Another layer composite of `EPPZHistory` and `EPPZDot`
     * With UI hooks
@@ -36,7 +40,7 @@ I still have no separate interface files, private/protected properties, but this
     * Created some Layer subclass
     * CSS adjustments (disable selection, mouse pointer states)
 
-+ 1.0.5
++ 1.0.5 (deployed to GitHub page)
     * Scene now creates `<canvas>` DOM elements on its own
     * Scene constructor parameters exposed to an associative array
     * Layers takes a `<canvas>` element, and a scene reference as constructor input

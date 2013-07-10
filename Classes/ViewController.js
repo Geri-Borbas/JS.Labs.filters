@@ -37,10 +37,15 @@ var ViewController = Class.extend
                 'fps' : 60
             });
         this.scene.rootLayer.addSubLayer('history', EPPZHistory, '#CCC');
-        this.scene.rootLayer.addSubLayer('samples', EPPZSamples, '#AAA');
+        this.scene.rootLayer.addSubLayer('samples', EPPZSamples, '#777');
         this.onePoleFilterLayer = this.scene.rootLayer.addSubLayer('onePoleFilterHistory', EPPZOnePoleFilter, 'red');
         this.movingAverageLayer = this.scene.rootLayer.addSubLayer('movingAverageHistory', EPPZMovingAverage, 'blue');
 
+        //Collapse canvases by default.
+        this.collapseCanvases();
+
+        //Add wheel listening.
+        this.mouseWheelListener = new MouseWheelListener(this.mouseDidRollWheel);
     },
 
     initWithFps: function(fps)
@@ -71,8 +76,8 @@ var ViewController = Class.extend
     //One-pole filter control.
     filterSliderValueChanged: function()
     {
-        this.filterLabel.innerHTML = '<strong>'+this.filterSlider.value+'</strong>';
-        this.onePoleFilterLayer.filter = this.filterSlider.value;
+        this.filterLabel.innerHTML = '<strong>'+this.filterSlider.value / 100.0+'</strong>';
+        this.onePoleFilterLayer.filter = this.filterSlider.value / 100.0;
     },
 
     //Moving average control.
@@ -80,6 +85,27 @@ var ViewController = Class.extend
     {
         this.windowSizeValueLabel.innerHTML = '<strong>'+this.windowSizeSlider.value+'</strong>';
         this.movingAverageLayer.windowSize = this.windowSizeSlider.value;
+    },
+
+    //Mouse wheel.
+    mouseDidRollWheel: function(delta)
+    {
+
+        log('Mouse delta ('+delta+')');
+
+        if (delta > 0)
+        {
+            viewController.filterSlider.value -= -10;
+            viewController.windowSizeSlider.value -= -10;
+        }
+        else
+        {
+            viewController.filterSlider.value -= 10;
+            viewController.windowSizeSlider.value -= 10;
+        }
+
+        viewController.filterSliderValueChanged();
+        viewController.windowSizeSliderValueChanged();
     },
 
     //Layer stacking.
@@ -94,6 +120,11 @@ var ViewController = Class.extend
     {
         for (var i = 0; i < this.canvases.length; i++)
             this.canvases[i].removeClass('collapse');
+    },
+
+    clearLayers: function()
+    {
+        this.scene.clearLayers();
     },
 
 });

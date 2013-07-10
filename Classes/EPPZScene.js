@@ -69,6 +69,11 @@ var EPPZScene = Class.extend
         this.rootLayer.render();
     },
 
+    clearLayers: function()
+    {
+        this.rootLayer.clearAlongSublayers();
+    },
+
     //Animation.
 
         start: function()

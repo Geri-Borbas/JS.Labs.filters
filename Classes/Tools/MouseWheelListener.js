@@ -9,29 +9,33 @@
  *
  */
 
-var EPPZOnePoleFilter = EPPZLayer.extend
+var MouseWheelListener = Class.extend
 ({
-    init: function()
+    construct: function(callback)
     {
-        this.filter = 0.2;
-        this.dotLayer = this.addSubLayer('onePoleFilterDot', EPPZDot, this.color);
+        //Stick the handler to document element.
+        document.callback = callback;
+
+        if (document.addEventListener)
+        {
+            //IE9, Chrome, Safari, Opera.
+            document.addEventListener("mousewheel", this.MouseWheelHandler, false);
+            //Firefox.
+            document.addEventListener("DOMMouseScroll", this.MouseWheelHandler, false);
+        }
+        //IE 6/7/8.
+        else document.attachEvent("onmousewheel", this.MouseWheelHandler);
     },
 
-    updateFilteredSamples: function()
+    MouseWheelHandler: function(event)
     {
-        //Save previous updateFilteredSamples value.
-        this.previousFilteredSample = new Point(this.filteredSample);
+        //Cross-browser wheel delta.
+        var event = window.event || event; //Old IE support.
+        var delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
 
-        //Filter.
-        this.filteredSample.x = this.sample.x * this.filter + this.previousFilteredSample.x * (1.0 - this.filter);
-        this.filteredSample.y = this.sample.y * this.filter + this.previousFilteredSample.y * (1.0 - this.filter);
+        //Invoke callback.
+        document.callback(delta);
 
-        //Pass new filtered sample to dot layer.
-        this.dotLayer.update(this.filteredSample);
-    },
-
-    draw: function()
-    {
-        this.strokeFilteredSamples();
+        return false;
     }
 });
