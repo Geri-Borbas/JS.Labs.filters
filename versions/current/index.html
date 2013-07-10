@@ -10,63 +10,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>labs!filtering 1.0.5</title>
-<link rel="stylesheet" type="text/css" href="styles.css">
+<meta http-equiv="refresh" content="1;url=http://eppz.github.io/labs-filters/versions/1.4.0/">
 </head>
-
 <body>
-
-    <!--Controls-->
-    <section>
-
-        <button title="start" onclick="viewController.scene.start();" class="square">►</button>
-        <button title="stop" onclick="viewController.scene.stop();" class="square">■</button>
-        <input id="fpsSlider" type="range" value="1" min="1" max="60"
-               onchange="viewController.fpsSliderValueChanged();"
-               onmouseup="viewController.fpsSliderReleased();">
-        <label id="fpsValueLabel"><strong>1</strong> fps</label>
-
-        <button title="collapse" onclick="viewController.collapseCanvases();">Collapse</button>
-        <button title="expand" onclick="viewController.expandCanvases();">Expand</button>
-
-    </section>
-
-    <!--Scene-->
-    <div id="scene">
-        <canvas id="history" width="300" height="300"></canvas>
-        <canvas id="samples" width="300" height="300"></canvas>
-        <canvas id="onePoleFilter" width="300" height="300"></canvas>
-        <canvas id="movingAverage" width="300" height="300"></canvas>
-    </div>
-
-    <!--Tools-->
-    <script src="Classes/eppz!kit.js"></script>
-    <script src="Classes/Class.js"></script>
-    <script src="Classes/helpers.js"></script>
-
-    <!--Base-->
-    <script src="Classes/EPPZScene.js"></script>
-    <script src="Classes/EPPZLayer.js"></script>
-
-    <!--Layers-->
-    <script src="Classes/EPPZSamples.js"></script>
-    <script src="Classes/EPPZHistory.js"></script>
-    <script src="Classes/EPPZOnePoleFilter.js"></script>
-    <script src="Classes/EPPZMovingAverage.js"></script>
-
-    <!--View-->
-    <script src="Classes/ViewController.js"></script>
-
-    <!--Load view-->
-    <script language="javascript">
-
-        var viewController = new ViewController();
-        viewController.initWithFps(60);
-
-    </script>
-
 </body>
 </html>

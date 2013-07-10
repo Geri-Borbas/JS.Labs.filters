@@ -9,18 +9,10 @@
  *
  */
 
-var EPPZOnePoleFilter = EPPZLayer.extend
-({
-    color: function()
-    { return 'red'; },
-
-    filter: function()
+var EPPZHistory = EPPZLayer.extend(
+{
+    draw: function()
     {
-        /*
-        var filter = 0.2;
-        this.filteredSample.x = this.sample.x * filter + this.previousSample.x * (1.0 - filter);
-        this.filteredSample.y = this.sample.y * filter + this.previousSample.y * (1.0 - filter);
-        */
+        this.strokeLatestNeighbouringSamples();
     }
-
 });

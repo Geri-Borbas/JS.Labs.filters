@@ -9,19 +9,29 @@
  *
  */
 
-var EPPZMovingAverage = EPPZLayer.extend
+var EPPZOnePoleFilter = EPPZLayer.extend
 ({
-    color: function()
-    { return 'blue'; },
-
-    filter: function()
+    init: function()
     {
-        this.samples.map(function(eachSample)
-        {
-            amount = 1;
-            eachSample.x = eachSample.x + Math.random() * amount;
-            eachSample.y = eachSample.y + Math.random() * amount;
-        });
-    }
+        this.filter = 0.05;
+        this.dotLayer = this.addSubLayer('onePoleFilterDot', EPPZDot, this.color);
+    },
 
+    updateFilteredSamples: function()
+    {
+        //Save previous updateFilteredSamples value.
+        this.previousFilteredSample = new Point(this.filteredSample);
+
+        //Filter.
+        this.filteredSample.x = this.sample.x * this.filter + this.previousFilteredSample.x * (1.0 - this.filter);
+        this.filteredSample.y = this.sample.y * this.filter + this.previousFilteredSample.y * (1.0 - this.filter);
+
+        //Pass new filtered sample to dot layer.
+        this.dotLayer.update(this.filteredSample);
+    },
+
+    draw: function()
+    {
+        this.strokeFilteredSamples();
+    }
 });

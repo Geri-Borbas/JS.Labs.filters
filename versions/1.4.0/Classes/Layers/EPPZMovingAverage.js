@@ -9,12 +9,38 @@
  *
  */
 
-var EPPZHistory = EPPZLayer.extend(
-{
-    color: function() { return '#EEE'; },
-
-    render: function()
+var EPPZMovingAverage = EPPZLayer.extend
+({
+    init: function()
     {
-        this.lineToSample();
+        this.windowSize = this.sampleWindowSize;
+        this.dotLayer = this.addSubLayer('movingAverageDot', EPPZDot, this.color);
+    },
+
+    updateFilteredSamples: function()
+    {
+        //Save previous updateFilteredSamples value.
+        this.previousFilteredSample = new Point(this.filteredSample);
+
+        //Filter.
+        var sum = new Point(0, 0);
+        for (var index = 0; index < this.windowSize; index++)
+        {
+            var eachSample = this.samples[index];
+            sum.x += eachSample.x;
+            sum.y += eachSample.y;
+        }
+
+        this.filteredSample.x = sum.x / this.windowSize;
+        this.filteredSample.y = sum.y / this.windowSize;
+
+        //Pass new filtered sample to dot layer.
+        this.dotLayer.update(this.filteredSample);
+    },
+
+    draw: function()
+    {
+        this.strokeFilteredSamples();
     }
+
 });
