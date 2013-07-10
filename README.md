@@ -14,6 +14,10 @@ I still have no separate interface files, private/protected properties, but this
 
 #### Version tracking
 
++ 1.1.2
+    * Created some Layer subclass
+    * CSS adjustments (disable selection, mouse pointer states)
+
 + 1.0.5
     * Scene now creates `<canvas>` DOM elements on its own
     * Scene constructor parameters exposed to an associative array

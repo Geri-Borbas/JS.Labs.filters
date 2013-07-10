@@ -9,64 +9,11 @@
  *
  */
 
-body
+var EPPZDot = EPPZLayer.extend(
 {
-    font: 12px Arial;
-    margin: 0px;
-
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: moz-none;
-    -ms-user-select: none;
-    user-select: none;
-
-    cursor: default;
-}
-
-#scene
-{
-    min-width: 300px;
-    min-height: 300px;
-
-    margin: 20px;
-
-    position: relative;
-}
-
-canvas
-{
-    margin: 0px 5px 5px 0px;
-    border: 1px solid gray;
-    background-color: transparent;
-}
-
-.collapse
-{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-
-section
-{
-    margin: 20px 0px 0px 20px;
-    position: relative;
-}
-
-button
-{
-    height: 30px;
-    margin: 5px 0px 0px 0px;
-}
-
-button.square
-{
-    width: 30px;
-}
-
-input
-{
-    top: 6px;
-    position: relative;
-}
+    render: function()
+    {
+        this.clear();
+        this.drawSampleCircle();
+    }
+});

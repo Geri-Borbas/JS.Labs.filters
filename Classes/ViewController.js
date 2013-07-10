@@ -28,10 +28,14 @@ var ViewController = Class.extend
                 'width' : 300,
                 'height' : 300,
                 'sampleWindowSize' : 100,
-                'autoStopAtFrame' : 300,
-                'fps' : 45
+                'autoStopAtFrame' : 600,
+                'fps' : 60
             });
-        this.scene.addNewLayer('samples', EPPZSamples);
+        this.scene.addNewLayer('history', EPPZHistory, 'blue');
+        this.scene.addNewLayer('historyDot', EPPZDot, 'blue');
+        this.scene.addNewLayer('samples', EPPZSamples, 'red');
+        this.scene.addNewLayer('samplesDot', EPPZDot, 'red');
+
     },
 
     initWithFps: function(fps)

@@ -11,12 +11,8 @@
 
 var EPPZHistory = EPPZLayer.extend(
 {
-    color: function() { return '#EEE'; },
-
     render: function()
     {
-        //Stoke latest neighbouring samples.
-
-        this.lineToSample();
+        this.strokeLatestNeighbouringSamples();
     }
 });

@@ -52,7 +52,7 @@ var EPPZScene = Class.extend
         this.mousePosition.y = event.pageY - this.topLeft.y;
     },
 
-    addNewLayer: function(canvasId, layerClass)
+    addNewLayer: function(canvasId, layerClass, color)
     {
         //Create <canvas> element.
         var canvas = document.createElement('canvas');
@@ -66,6 +66,7 @@ var EPPZScene = Class.extend
 
         //Create, collect layer.
         var layer = new layerClass(canvas, this);
+        layer.color = color;
         this.layers.push(layer);
     },
 

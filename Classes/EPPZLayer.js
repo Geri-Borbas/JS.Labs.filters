@@ -15,7 +15,7 @@
 
 var EPPZLayer = Class.extend
 ({
-    construct: function(canvas, scene)
+    construct: function(canvas, scene, color)
     {
         //<canvas> reference.
         this.canvas = canvas;
@@ -27,11 +27,15 @@ var EPPZLayer = Class.extend
         //Reference to the parent scene.
         this.scene = scene;
 
+        //Color.
+        this.color = color || 'darkgrey';
+
         //Samples.
         this.sampleWindowSize = this.scene.sampleWindowSize;
         this.samples = [];
 
-        //Reference the topmost sample.
+        //Reference the topmost samples.
+        this.previousSample = this.samples[1];
         this.sample = this.samples[0];
     },
 
@@ -50,7 +54,8 @@ var EPPZLayer = Class.extend
             this.samples.unshift(new Point(mousePositionSample));
             this.samples.pop();
 
-            //Reference the topmost sample.
+            //Reference the topmost samples.
+            this.previousSample = this.samples[1];
             this.sample = this.samples[0];
 
             //Filter samples whether implemented.
@@ -59,16 +64,13 @@ var EPPZLayer = Class.extend
 
         tick: function()
         {
-            this.context.strokeStyle = this.color();
-            this.context.fillStyle = this.color();
+            this.context.strokeStyle = this.color;
+            this.context.fillStyle = this.color;
             this.render();
             this.drawStamp();
         },
 
     //Subclass templates.
-
-        color: function()
-        { return 'darkgrey'; },
 
         filter: function()
         { /* Subclass template. */ },
@@ -84,9 +86,16 @@ var EPPZLayer = Class.extend
         Drawing tools.
      */
 
-        lineToSample: function()
+        clear: function()
+        {
+            this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        },
+
+        strokeLatestNeighbouringSamples: function()
         {
             //Simply a line towards the topmost sample.
+            this.context.beginPath();
+            this.context.moveTo(this.previousSample.x, this.previousSample.y);
             this.context.lineTo(this.sample.x, this.sample.y);
             this.context.stroke();
         },
@@ -100,9 +109,6 @@ var EPPZLayer = Class.extend
 
         renderSampleWindow: function()
         {
-            //Clear frame.
-            this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
-
             //Create samples path.
             this.context.beginPath();
             this.context.moveTo(this.sample.x, this.sample.y);
