@@ -21,6 +21,8 @@ var ViewController = Class.extend
         this.fpsLabel = document.getElementById('fpsValueLabel');
         this.filterSlider = document.getElementById('filterSlider');
         this.filterLabel = document.getElementById('filterValueLabel');
+        this.windowSizeSlider = document.getElementById('windowSizeSlider');
+        this.windowSizeValueLabel = document.getElementById('windowSizeValueLabel');
 
         this.canvases = document.getElementsByTagName('canvas');
 
@@ -28,15 +30,16 @@ var ViewController = Class.extend
         this.scene = new EPPZScene(
             {
                 'divId' : 'scene',
-                'width' : 150,
-                'height' : 150,
+                'width' : 450,
+                'height' : 450,
                 'sampleWindowSize' : 100,
-                'autoStopAtFrame' : 600,
+                'autoStopAtFrame' : 0,
                 'fps' : 60
             });
         this.scene.rootLayer.addSubLayer('history', EPPZHistory, '#CCC');
         this.scene.rootLayer.addSubLayer('samples', EPPZSamples, '#AAA');
         this.onePoleFilterLayer = this.scene.rootLayer.addSubLayer('onePoleFilterHistory', EPPZOnePoleFilter, 'red');
+        this.movingAverageLayer = this.scene.rootLayer.addSubLayer('movingAverageHistory', EPPZMovingAverage, 'blue');
 
     },
 
@@ -72,6 +75,14 @@ var ViewController = Class.extend
         this.onePoleFilterLayer.filter = this.filterSlider.value;
     },
 
+    //Moving average control.
+    windowSizeSliderValueChanged: function()
+    {
+        this.windowSizeValueLabel.innerHTML = '<strong>'+this.windowSizeSlider.value+'</strong>';
+        this.movingAverageLayer.windowSize = this.windowSizeSlider.value;
+    },
+
+    //Layer stacking.
     collapseCanvases: function()
     {
         for (var i = 0; i < this.canvases.length; i++)

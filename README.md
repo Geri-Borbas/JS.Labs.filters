@@ -14,6 +14,12 @@ I still have no separate interface files, private/protected properties, but this
 
 #### Version tracking
 
++ 1.4.0
+    * Reintroduced `EPPZMovingAverage`
+        * Another layer composite of `EPPZHistory` and `EPPZDot`
+    * With UI hooks
+        * Slider to `EPPZMovingAverage.windowSize` property
+
 + 1.3.0
     * Refactored layer tree
         * Layers maintains their own layer collection

@@ -11,17 +11,36 @@
 
 var EPPZMovingAverage = EPPZLayer.extend
 ({
-    color: function()
-    { return 'blue'; },
-
-    filter: function()
+    init: function()
     {
-        this.samples.map(function(eachSample)
+        this.windowSize = this.sampleWindowSize;
+        this.dotLayer = this.addSubLayer('movingAverageDot', EPPZDot, this.color);
+    },
+
+    updateFilteredSamples: function()
+    {
+        //Save previous updateFilteredSamples value.
+        this.previousFilteredSample = new Point(this.filteredSample);
+
+        //Filter.
+        var sum = new Point(0, 0);
+        for (var index = 0; index < this.windowSize; index++)
         {
-            amount = 1;
-            eachSample.x = eachSample.x + Math.random() * amount;
-            eachSample.y = eachSample.y + Math.random() * amount;
-        });
+            var eachSample = this.samples[index];
+            sum.x += eachSample.x;
+            sum.y += eachSample.y;
+        }
+
+        this.filteredSample.x = sum.x / this.windowSize;
+        this.filteredSample.y = sum.y / this.windowSize;
+
+        //Pass new filtered sample to dot layer.
+        this.dotLayer.update(this.filteredSample);
+    },
+
+    draw: function()
+    {
+        this.strokeFilteredSamples();
     }
 
 });
