@@ -14,6 +14,10 @@ I still have no separate interface files, private/protected properties, but this
 
 #### Version tracking
 
++ 1.4.6
+    * Randomize sample feature (white mouse is down)
+    * Some UI arrangement for controls
+
 + 1.4.5
     * Mouse wheel input for sliders (more smooth UX for exploring)
     * Awesome `clearLayers()` feature

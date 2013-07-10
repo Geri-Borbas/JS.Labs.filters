@@ -37,15 +37,16 @@ var ViewController = Class.extend
                 'fps' : 60
             });
         this.scene.rootLayer.addSubLayer('history', EPPZHistory, '#CCC');
-        this.scene.rootLayer.addSubLayer('samples', EPPZSamples, '#777');
+        this.scene.rootLayer.addSubLayer('samples', EPPZSamples, '#BBB');
         this.onePoleFilterLayer = this.scene.rootLayer.addSubLayer('onePoleFilterHistory', EPPZOnePoleFilter, 'red');
         this.movingAverageLayer = this.scene.rootLayer.addSubLayer('movingAverageHistory', EPPZMovingAverage, 'blue');
 
         //Collapse canvases by default.
         this.collapseCanvases();
 
-        //Add wheel listening.
-        this.mouseWheelListener = new MouseWheelListener(this.mouseDidRollWheel);
+        //Add wheel listening (suspended for now).
+        if (false)
+            this.mouseWheelListener = new MouseWheelListener(this.mouseDidRollWheel);
     },
 
     initWithFps: function(fps)

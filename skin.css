@@ -9,71 +9,99 @@
  *
  */
 
-body
-{
-    font: 12px Arial;
-    margin: 0px;
-
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: moz-none;
-    -ms-user-select: none;
-    user-select: none;
-
-    cursor: default;
-}
-
 #scene
 {
-    min-width: 300px;
-    min-height: 300px;
 
-    margin: 20px;
-
-    position: relative;
 }
 
 .layer
 {
-    display: inline-block;
+
 }
 
 canvas
 {
-    margin: 0px 5px 5px 0px;
-    border: 1px solid gray;
-    background-color: transparent;
-}
 
-.collapse
-{
-    position: absolute;
-    top: 0px;
-    left: 0px;
 }
 
 section
 {
-    min-width: 450px;
 
-    margin: 20px 0px 0px 20px;
-    position: relative;
+}
+
+div.variable
+{
+    width: 442px; /* -4px -4px padding */
+    height: 20px;
+
+    padding: 0px;
+    margin-bottom: 4px;
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+div.variable label.name
+{
+    width: 100px;
+    height: 20px;
+
+    line-height: 20px;
+    padding: 0px 0px 0px 4px;
+    margin: 0px;
+
+    color: white;
+    background-color: darkgray;
+
+    display: inline-block;
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+div.variable label.value
+{
+    height: 20px;
+
+    line-height: 20px;
+    padding: 0px 4px 0px 4px;
+    margin: 0px;
+
+    color: black;
+    background-color: lightgray;
+
+    display: inline-block;
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 }
 
 button
 {
-    height: 30px;
-    margin: 5px 0px 0px 0px;
+    color: white;
+    background-color: darkgray;
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+
+    border: none;
+}
+
+button:hover
+{
+    background-color: #444;
 }
 
 button.square
 {
-    width: 30px;
+
 }
 
 input
 {
-    top: 6px;
-    position: relative;
+
 }

@@ -13,8 +13,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>labs!filtering 1.4.5</title>
-<link rel="stylesheet" type="text/css" href="styles.css">
+<title>labs!filtering 1.4.6</title>
+<link rel="stylesheet" type="text/css" href="layout.css">
+<link rel="stylesheet" type="text/css" href="skin.css">
 </head>
 
 <body>
@@ -22,31 +23,30 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <!--Controls-->
     <section>
 
-        <button title="start" onclick="viewController.scene.start();" class="square">►</button>
-        <button title="stop" onclick="viewController.scene.stop();" class="square">■</button>
-
-        <div>
-            <label class="variableName">Frame rate</label>
-            <input id="fpsSlider" type="range" value="1" min="1" max="60"
+        <div class="variable">
+            <label class="name">Frame rate</label>
+            <input id="fpsSlider" type="range" class="range" value="1" min="1" max="60"
                    onchange="viewController.fpsSliderValueChanged();"
                    onmouseup="viewController.fpsSliderReleased();">
-            <label class="variablevalue" id="fpsValueLabel"><strong>1</strong> fps</label>
+            <label class="value" id="fpsValueLabel"><strong>1</strong> fps</label>
         </div>
 
-        <div>
-            <label class="variableName">Filter</label>
-            <input id="filterSlider" type="range" value="20" min="1" max="100"
+        <div class="variable">
+            <label class="name">Filter</label>
+            <input id="filterSlider" type="range" class="range" value="20" min="1" max="100"
                    onchange="viewController.filterSliderValueChanged();">
-            <label class="variablevalue" id="filterValueLabel"><strong>0.2</strong></label>
+            <label class="value" id="filterValueLabel"><strong>0.2</strong></label>
         </div>
 
-        <div>
-            <label class="variableName">Window size</label>
-            <input id="windowSizeSlider" type="range" value="20" min="1" max="100"
+        <div class="variable">
+            <label class="name">Window size</label>
+            <input id="windowSizeSlider" type="range" class="range" value="20" min="1" max="100"
                    onchange="viewController.windowSizeSliderValueChanged();">
-            <label class="variablevalue" id="windowSizeValueLabel"><strong>20</strong></label>
+            <label class="value" id="windowSizeValueLabel"><strong>20</strong></label>
         </div>
 
+        <button title="start" onclick="viewController.scene.start();" class="square">►</button>
+        <button title="stop" onclick="viewController.scene.stop();" class="square">■</button>
         <button title="collapse" onclick="viewController.collapseCanvases();">Collapse</button>
         <button title="expand" onclick="viewController.expandCanvases();">Expand</button>
         <button title="clear" onclick="viewController.clearLayers();">Clear</button>

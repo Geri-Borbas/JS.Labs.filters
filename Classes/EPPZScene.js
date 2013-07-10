@@ -40,6 +40,12 @@ var EPPZScene = Class.extend
         this.mousePosition = new Point();
         document.onmousemove = function(event) { _this.mouseMoved(event); }
 
+        //Randomizer.
+        this.mouseIsDown = false;
+        this.randomRange = 60.0;
+        document.onmousedown = function(event) { _this.mouseIsDown = true; }
+        document.onmouseup = function(event) { _this.mouseIsDown = false; }
+
         //Root EPPZLayer.
         log('EPPZScene is this '+this);
 
@@ -54,6 +60,19 @@ var EPPZScene = Class.extend
         this.mousePosition.y = event.pageY - this.topLeft.y;
     },
 
+    randomizedMouseSampleIfNeeded: function()
+    {
+        var mousePosition = new Point(this.mousePosition);
+        if (this.mouseIsDown)
+        {
+            var horizontalRandomOffset = this.randomRange / 2.0 - Math.random() * this.randomRange;
+            var verticalRandomOffset = this.randomRange / 2.0 - Math.random() * this.randomRange;
+            mousePosition.x += horizontalRandomOffset;
+            mousePosition.y += verticalRandomOffset;
+        }
+        return mousePosition;
+    },
+
     tick: function()
     {
         //Auto stop feature.
@@ -63,7 +82,7 @@ var EPPZScene = Class.extend
         this.frame++;
 
         //update() layer tree.
-        this.rootLayer.update(this.mousePosition);
+        this.rootLayer.update(this.randomizedMouseSampleIfNeeded());
 
         //render() layer tree.
         this.rootLayer.render();
