@@ -14,6 +14,10 @@ I still have no separate interface files, private/protected properties, but this
 
 #### Version tracking
 
++ 1.4.9
+    * UI is compressed (fit into 450px)
+    * Collapse/expand is uses 3D transforms (still need to expand to every individual layer)
+
 + 1.4.6
     * Randomize sample feature (white mouse is down)
     * Some UI arrangement for controls

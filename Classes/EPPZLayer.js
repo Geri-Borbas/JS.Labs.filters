@@ -135,6 +135,47 @@ var EPPZLayer = Class.extend
         draw: function()
         { /* Subclass template */ },
 
+    //3D visualization.
+
+        expand: function()
+        {
+            //expand() for each sublayer.
+            for (var eachLayerIndex in this.layers)
+            {
+                eachLayer = this.layers[eachLayerIndex];
+                this.layers[eachLayerIndex].expand();
+            }
+
+            //Values.
+            var amount = 1.5;
+            var rotationX = -0.26 * amount;
+            var rotationY = 0.23 * amount;
+            var rotationZ = 0.05 * amount;
+            var rotationDegrees = 10;
+            var translateX = 9 * amount;
+            var translateY = 12 * amount;
+            var translateZ = 58 * amount;
+
+            //Adjust style.
+            this.div.style.webkitTransform = this.div.style.MozTransform = this.div.style.msTransform = this.div.style.OTransform = this.div.style.transform =
+                'rotate3d('+rotationX+', '+rotationY+', '+rotationZ+', '+rotationDegrees+'deg )'+
+                'translate3d('+translateX+'px, '+translateY+'px, '+translateZ+'px)';
+        },
+
+        collapse: function()
+        {
+            //collapse() for each sublayer.
+            for (var eachLayerIndex in this.layers)
+            {
+                eachLayer = this.layers[eachLayerIndex];
+                this.layers[eachLayerIndex].collapse();
+            }
+
+            //Remove style.
+            this.div.style.webkitTransform = this.div.style.MozTransform = this.div.style.msTransform = this.div.style.OTransform = this.div.style.transform =
+                'none';
+        },
+
     /*
         Drawing tools.
      */

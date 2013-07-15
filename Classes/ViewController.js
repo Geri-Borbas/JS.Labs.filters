@@ -30,8 +30,8 @@ var ViewController = Class.extend
         this.scene = new EPPZScene(
             {
                 'divId' : 'scene',
-                'width' : 450,
-                'height' : 450,
+                'width' : 448, //Spare the border.
+                'height' : 448,
                 'sampleWindowSize' : 100,
                 'autoStopAtFrame' : 0,
                 'fps' : 60
@@ -40,9 +40,6 @@ var ViewController = Class.extend
         this.scene.rootLayer.addSubLayer('samples', EPPZSamples, '#BBB');
         this.onePoleFilterLayer = this.scene.rootLayer.addSubLayer('onePoleFilterHistory', EPPZOnePoleFilter, 'red');
         this.movingAverageLayer = this.scene.rootLayer.addSubLayer('movingAverageHistory', EPPZMovingAverage, 'blue');
-
-        //Collapse canvases by default.
-        this.collapseCanvases();
 
         //Add wheel listening (suspended for now).
         if (false)
@@ -110,18 +107,11 @@ var ViewController = Class.extend
     },
 
     //Layer stacking.
-    collapseCanvases: function()
-    {
-        for (var i = 0; i < this.canvases.length; i++)
-            if (this.canvases[i].hasClass('collapse') == false)
-                this.canvases[i].addClass('collapse');
-    },
+    collapseScene: function()
+    { this.scene.collapse(); },
 
-    expandCanvases: function()
-    {
-        for (var i = 0; i < this.canvases.length; i++)
-            this.canvases[i].removeClass('collapse');
-    },
+    expandScene: function()
+    { this.scene.expand(); },
 
     clearLayers: function()
     {

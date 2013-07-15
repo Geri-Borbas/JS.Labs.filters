@@ -14,29 +14,42 @@ body
     font: 12px Arial;
     margin: 0px;
 
+    position: relative;
+}
+
+#scene
+{
+    width: 450px;
+    height: 450px;
+
+    position: relative;
+
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: moz-none;
     -ms-user-select: none;
     user-select: none;
-
     cursor: default;
-}
 
-#scene
-{
-    min-width: 300px;
-    min-height: 300px;
-
-    margin: 20px;
-
-    position: relative;
+    overflow: hidden;
 }
 
 .layer
 {
     display: inline-block;
+
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+
+    -webkit-transform-origin: 50% 0%;
+    -moz-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -o-transform-origin:  50% 100%;
+    transform-origin: 50% 100%;
 }
 
 canvas
@@ -44,21 +57,61 @@ canvas
     margin: 0px 5px 5px 0px;
     border: 1px solid gray;
     background-color: transparent;
-}
 
-.collapse
-{
     position: absolute;
     top: 0px;
     left: 0px;
 }
 
-section
+#controls
 {
-    min-width: 450px;
+    width: 450px;
+    height: 450px;
 
-    margin: 20px 0px 0px 20px;
-    position: relative;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: moz-none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+
+    z-index: 99999999;
+}
+
+#controls #panel
+{
+    width: 438px;
+
+    padding-left: 10px;
+    padding-bottom: 10px;
+
+    background-color: rgba(240, 240, 240, 0.5);
+
+    bottom: 1px;
+    left: 1px;
+    position: absolute;
+}
+
+#controls #legend
+{
+    padding-right: 10px;
+    padding-bottom: 10px;
+
+    bottom: 1px;
+    right: 1px;
+    position: absolute;
+
+    text-align: right;
+}
+
+#controls #legend span
+{
+    display: block;
 }
 
 button

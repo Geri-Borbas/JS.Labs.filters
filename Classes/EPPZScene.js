@@ -106,6 +106,14 @@ var EPPZScene = Class.extend
         {
             clearInterval(this.timer);
             this.frame = 0;
-        }
+        },
+
+    //3D visualization.
+
+        expand: function()
+        { this.rootLayer.expand(); },
+
+        collapse: function()
+        { this.rootLayer.collapse(); }
 
 });

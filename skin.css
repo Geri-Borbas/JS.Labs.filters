@@ -79,6 +79,10 @@ div.variable label.value
     border-radius: 2px;
 }
 
+#controls #legend span.gray { color: darkgray; }
+#controls #legend span.red { color: red; }
+#controls #legend span.blue { color: blue; }
+
 button
 {
     color: white;

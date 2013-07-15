@@ -13,50 +13,61 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>labs!filtering 1.4.6</title>
+<title>labs!filtering 1.4.9</title>
 <link rel="stylesheet" type="text/css" href="layout.css">
 <link rel="stylesheet" type="text/css" href="skin.css">
 </head>
 
 <body>
 
-    <!--Controls-->
-    <section>
-
-        <div class="variable">
-            <label class="name">Frame rate</label>
-            <input id="fpsSlider" type="range" class="range" value="1" min="1" max="60"
-                   onchange="viewController.fpsSliderValueChanged();"
-                   onmouseup="viewController.fpsSliderReleased();">
-            <label class="value" id="fpsValueLabel"><strong>1</strong> fps</label>
-        </div>
-
-        <div class="variable">
-            <label class="name">Filter</label>
-            <input id="filterSlider" type="range" class="range" value="20" min="1" max="100"
-                   onchange="viewController.filterSliderValueChanged();">
-            <label class="value" id="filterValueLabel"><strong>0.2</strong></label>
-        </div>
-
-        <div class="variable">
-            <label class="name">Window size</label>
-            <input id="windowSizeSlider" type="range" class="range" value="20" min="1" max="100"
-                   onchange="viewController.windowSizeSliderValueChanged();">
-            <label class="value" id="windowSizeValueLabel"><strong>20</strong></label>
-        </div>
-
-        <button title="start" onclick="viewController.scene.start();" class="square">►</button>
-        <button title="stop" onclick="viewController.scene.stop();" class="square">■</button>
-        <button title="collapse" onclick="viewController.collapseCanvases();">Collapse</button>
-        <button title="expand" onclick="viewController.expandCanvases();">Expand</button>
-        <button title="clear" onclick="viewController.clearLayers();">Clear</button>
-
-    </section>
-
     <!--Scene-->
     <div id="scene">
         <!--A lovely place for <canvas> layers-->
     </div>
+    <!--Controls-->
+    <section id="controls">
+
+        <div id="panel">
+
+            <div class="variable">
+                <label class="name">Frame rate</label>
+                <input id="fpsSlider" type="range" class="range" value="1" min="1" max="60"
+                       onchange="viewController.fpsSliderValueChanged();"
+                       onmouseup="viewController.fpsSliderReleased();">
+                <label class="value" id="fpsValueLabel"><strong>1</strong> fps</label>
+            </div>
+
+            <div class="variable">
+                <label class="name">Filter</label>
+                <input id="filterSlider" type="range" class="range" value="20" min="1" max="100"
+                       onchange="viewController.filterSliderValueChanged();">
+                <label class="value" id="filterValueLabel"><strong>0.2</strong></label>
+            </div>
+
+            <div class="variable">
+                <label class="name">Window size</label>
+                <input id="windowSizeSlider" type="range" class="range" value="20" min="1" max="100"
+                       onchange="viewController.windowSizeSliderValueChanged();">
+                <label class="value" id="windowSizeValueLabel"><strong>20</strong></label>
+            </div>
+
+            <button title="start" onclick="viewController.scene.start();" class="square">►</button>
+            <button title="stop" onclick="viewController.scene.stop();" class="square">■</button>
+            <button title="collapse" onclick="viewController.collapseScene();">Collapse</button>
+            <button title="expand" onclick="viewController.expandScene();">Expand</button>
+            <button title="clear" onclick="viewController.clearLayers();">Clear</button>
+
+        </div>
+
+        <div id="legend">
+
+            <span class="gray">Click for noise</span>
+            <span class="blue">Moving average</span>
+            <span class="red">One pole filter</span>
+
+        </div>
+
+    </section>
 
     <!--Tools-->
     <script src="Classes/Tools/eppz!kit.js"></script>
