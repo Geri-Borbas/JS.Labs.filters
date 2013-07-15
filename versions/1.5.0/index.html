@@ -1,0 +1,101 @@
+<!--
+
+Created by Borbás Geri on 7/6/13
+Copyright (c) 2013 eppz! development, LLC.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>labs!filtering 1.4.9</title>
+<link rel="stylesheet" type="text/css" href="layout.css">
+<link rel="stylesheet" type="text/css" href="skin.css">
+</head>
+
+<body>
+
+    <!--Scene-->
+    <div id="scene">
+        <!--A lovely place for <canvas> layers-->
+    </div>
+    <!--Controls-->
+    <section id="controls">
+
+        <div id="panel">
+
+            <div class="variable">
+                <label class="name">Frame rate</label>
+                <input id="fpsSlider" type="range" class="range" value="1" min="1" max="60"
+                       onchange="viewController.fpsSliderValueChanged();"
+                       onmouseup="viewController.fpsSliderReleased();">
+                <label class="value" id="fpsValueLabel"><strong>1</strong> fps</label>
+            </div>
+
+            <div class="variable">
+                <label class="name">Filter</label>
+                <input id="filterSlider" type="range" class="range" value="20" min="1" max="100"
+                       onchange="viewController.filterSliderValueChanged();">
+                <label class="value" id="filterValueLabel"><strong>0.2</strong></label>
+            </div>
+
+            <div class="variable">
+                <label class="name">Window size</label>
+                <input id="windowSizeSlider" type="range" class="range" value="20" min="1" max="100"
+                       onchange="viewController.windowSizeSliderValueChanged();">
+                <label class="value" id="windowSizeValueLabel"><strong>20</strong></label>
+            </div>
+
+            <button title="start" onclick="viewController.scene.start();" class="square">►</button>
+            <button title="stop" onclick="viewController.scene.stop();" class="square">■</button>
+            <button title="collapse" onclick="viewController.collapseScene();">Collapse</button>
+            <button title="expand" onclick="viewController.expandScene();">Expand</button>
+            <button title="clear" onclick="viewController.clearLayers();">Clear</button>
+
+        </div>
+
+        <div id="legend">
+
+            <span class="gray">Click for noise</span>
+            <span class="blue">Moving average</span>
+            <span class="red">One pole filter</span>
+
+        </div>
+
+    </section>
+
+    <!--Tools-->
+    <script src="Classes/Tools/eppz!kit.js"></script>
+    <script src="Classes/Tools/Class.js"></script>
+    <script src="Classes/Tools/helpers.js"></script>
+    <script src="Classes/Tools/MouseWheelListener.js"></script>
+
+    <!--Base-->
+    <script src="Classes/EPPZScene.js"></script>
+    <script src="Classes/EPPZLayer.js"></script>
+
+    <!--Layers-->
+    <script src="Classes/Layers/EPPZDot.js"></script>
+    <script src="Classes/Layers/EPPZHistory.js"></script>
+    <script src="Classes/Layers/EPPZSamples.js"></script>
+    <script src="Classes/Layers/EPPZOnePoleFilter.js"></script>
+    <script src="Classes/Layers/EPPZMovingAverage.js"></script>
+
+    <!--View-->
+    <script src="Classes/ViewController.js"></script>
+
+    <!--Load view-->
+    <script language="javascript">
+
+        var viewController = new ViewController();
+        viewController.initWithFps(60);
+
+    </script>
+
+</body>
+</html>
