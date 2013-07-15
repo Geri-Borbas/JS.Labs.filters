@@ -18,7 +18,7 @@ var EPPZLayer = Class.extend
     construct: function(parent, name, color)
     {
         log('Create Layer <'+name+'> with parent '+parent);
-        scene
+
         //Reference to the parent scene (either Scene itself or trough a parent Layer).
         this.parent = parent;
         if (parent instanceof EPPZScene) this.scene = parent;
@@ -35,7 +35,7 @@ var EPPZLayer = Class.extend
         this.div.height = this.parent.height;
 
         //Add to the <div> of parent element (either Scene or a parent Layer).
-        this.parent.div.appendChild(this.div);
+        this.scene.addLayer(this);
 
         //Create, insert <canvas> element.
         this.canvas = document.createElement('canvas');
@@ -147,9 +147,9 @@ var EPPZLayer = Class.extend
             }
 
             //Values.
-            var amount = 1.5;
-            var rotationX = -0.26 * amount;
-            var rotationY = 0.23 * amount;
+            var amount = this.index * 1.5;
+            var rotationX = -0.3 * amount;
+            var rotationY = 0.3 * amount;
             var rotationZ = 0.05 * amount;
             var rotationDegrees = 10;
             var translateX = 9 * amount;
@@ -158,7 +158,7 @@ var EPPZLayer = Class.extend
 
             //Adjust style.
             this.div.style.webkitTransform = this.div.style.MozTransform = this.div.style.msTransform = this.div.style.OTransform = this.div.style.transform =
-                'rotate3d('+rotationX+', '+rotationY+', '+rotationZ+', '+rotationDegrees+'deg )'+
+                'rotate3d('+rotationX+', '+rotationY+', '+rotationZ+', '+rotationDegrees+'deg) '+
                 'translate3d('+translateX+'px, '+translateY+'px, '+translateZ+'px)';
         },
 

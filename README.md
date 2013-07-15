@@ -14,6 +14,10 @@ I still have no separate interface files, private/protected properties, but this
 
 #### Version tracking
 
++ 1.5.0
+    * Rerranged layer tree (actually flattened out <div> hierarchy)
+    * Therefore shiny 3D `expand()` is implemented
+
 + 1.4.9
     * UI is compressed (fit into 450px)
     * Collapse/expand is uses 3D transforms (still need to expand to every individual layer)

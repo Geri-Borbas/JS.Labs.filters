@@ -49,9 +49,22 @@ var EPPZScene = Class.extend
         //Root EPPZLayer.
         log('EPPZScene is this '+this);
 
+        this.layers = [];
         this.rootLayer = new EPPZLayer(this, 'root'); //Construct with scene, name, [color].
 
         log('EPPZScene created at '+this.topLeft.stringValue()+' with dimensions ['+this.width+','+this.height+'] running at '+this.fps+' fps.');
+    },
+
+    addLayer: function(layer)
+    {
+        //Model.
+        this.layers.push(layer);
+
+        //Layer model.
+        layer.index = this.layers.length;
+
+        //UI.
+        this.div.appendChild(layer.div);
     },
 
     mouseMoved: function(event)

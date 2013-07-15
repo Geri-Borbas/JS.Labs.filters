@@ -33,6 +33,12 @@ body
     cursor: default;
 
     overflow: hidden;
+
+    -webkit-perspective: 2500px;
+    -moz-perspective: 2500px;
+    -ms-perspective: 2500px;
+    -o-perspective: 2500px;
+    perspective: 2500px;
 }
 
 .layer
@@ -50,6 +56,8 @@ body
     -ms-transform-origin: 50% 100%;
     -o-transform-origin:  50% 100%;
     transform-origin: 50% 100%;
+
+    pointer-events:none;
 }
 
 canvas
