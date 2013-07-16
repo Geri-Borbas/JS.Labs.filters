@@ -15,7 +15,7 @@ I still have no separate interface files, private/protected properties, but this
 #### Version tracking
 
 + 1.5.0
-    * Rerranged layer tree (actually flattened out <div> hierarchy)
+    * Rerranged layer tree (actually flattened out `div` hierarchy)
     * Therefore shiny 3D `expand()` is implemented
 
 + 1.4.9
